@@ -51,6 +51,7 @@ namespace RocksmithToolkitLib.DLCPackage
         public string ToneB { get; set; }
         public string ToneC { get; set; }
         public string ToneD { get; set; }
+        public bool AutoloadTones { get; set; }
         // DLC ID
         public Guid Id { get; set; }
         public int MasterId { get; set; }

@@ -989,7 +989,8 @@ namespace RocksmithToolkitLib.DLCPackage
                     break;
                 case GameVersion.RS2014:
                     if (arrangement.Sng2014 == null) {
-                        UpdateTones(arrangement);
+                        if (arrangement.AutoloadTones)
+                            UpdateTones(arrangement);
 
                         // Sng2014File can be reused when generating for multiple platforms
                         // cache results
