@@ -239,9 +239,8 @@ namespace RocksmithToolkitGUI.DLCPackageCreator
                 toneBCombo.SelectedItem = arrangement.ToneB;
                 toneCCombo.SelectedItem = arrangement.ToneC;
                 toneDCombo.SelectedItem = arrangement.ToneD;
-                
-                // If have ToneBase and ToneB is setup it's because auto tone are setup in EoF, so, disable edit to prevent errors.
-                disableTonesCheckbox.Checked = ((toneBaseCombo.SelectedItem != null && !String.IsNullOrEmpty(toneBaseCombo.SelectedItem.ToString())) && (toneBCombo.SelectedItem != null && !String.IsNullOrEmpty(toneBCombo.SelectedItem.ToString()))); ;
+                // do not override XML chart tone names
+                disableTonesCheckbox.Checked = arrangement.AutoloadTones;
 
                 //DLC ID
                 PersistentId.Text = arrangement.Id.ToString().Replace("-", "").ToUpper();
@@ -389,8 +388,7 @@ namespace RocksmithToolkitGUI.DLCPackageCreator
                                     parentControl.TonesLB.Items.Add(parentControl.CreateNewTone(xmlSong.ToneD));
                             }
 
-                            // If have ToneBase and ToneB is setup it's because auto tone are setup in EoF, so, disable edit to prevent errors.
-                            disableTonesCheckbox.Checked = (!String.IsNullOrEmpty(xmlSong.ToneBase) && !String.IsNullOrEmpty(xmlSong.ToneB));
+                            disableTonesCheckbox.Checked = arrangement.AutoloadTones;
                         }
                         else
                         {
@@ -565,6 +563,8 @@ namespace RocksmithToolkitGUI.DLCPackageCreator
             ToneComboEnabled(enabled);
             if (enabled)
                 SequencialToneComboEnabling();
+
+            arrangement.AutoloadTones = disableTonesCheckbox.Checked;
         }
 
         private void tuningEditButton_Click(object sender, EventArgs e) {

@@ -278,7 +278,7 @@
             this.disableTonesCheckbox.Name = "disableTonesCheckbox";
             this.disableTonesCheckbox.Size = new System.Drawing.Size(266, 17);
             this.disableTonesCheckbox.TabIndex = 45;
-            this.disableTonesCheckbox.Text = "Disable tone slot changes to prevent auto-tone fail.";
+            this.disableTonesCheckbox.Text = "Load tone slots from chart";
             this.disableTonesCheckbox.UseVisualStyleBackColor = true;
             this.disableTonesCheckbox.CheckedChanged += new System.EventHandler(this.disableTonesCheckbox_CheckedChanged);
             // 
