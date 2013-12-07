@@ -299,8 +299,6 @@ namespace packer
         {
             foreach (var arr in info.Arrangements) {
                 arr.SongXml.File = Path.Combine(Path.GetDirectoryName(templateDir), arr.SongXml.File);
-                if (gameVersion == GameVersion.RS2014)
-                    UpdateTones(arr);
             }
             info.AlbumArtPath = Path.Combine(Path.GetDirectoryName(templateDir), info.AlbumArtPath);
             if (!String.IsNullOrEmpty(info.OggPath))
