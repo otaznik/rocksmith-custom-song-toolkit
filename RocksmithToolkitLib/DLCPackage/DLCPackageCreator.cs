@@ -996,22 +996,22 @@ namespace RocksmithToolkitLib.DLCPackage
                         throw new InvalidDataException(String.Format("Invalid tone definition detected in {0}, ToneA (ID 0) is expected to be same as ToneBase.", arrangement.SongXml.File));
                     arrangement.ToneA = xml.ToneA;
                 } else
-                    arrangement.ToneA = null;
+                    arrangement.ToneA = "";
                 // B (ID 1)
                 if (xml.ToneB != null)
                     arrangement.ToneB = xml.ToneB;
                 else
-                    arrangement.ToneB = null;
+                    arrangement.ToneB = "";
                 // C (ID 2)
                 if (xml.ToneC != null)
                     arrangement.ToneC = xml.ToneC;
                 else
-                    arrangement.ToneC = null;
+                    arrangement.ToneC = "";
                 // D (ID 3)
                 if (xml.ToneD != null)
                     arrangement.ToneD = xml.ToneD;
                 else
-                    arrangement.ToneD = null;
+                    arrangement.ToneD = "";
             }
         }
 
